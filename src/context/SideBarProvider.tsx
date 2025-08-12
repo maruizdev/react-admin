@@ -22,12 +22,10 @@ const SideBarProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const openSideMenu = () => {
     setSideMenuOpen(true)
-    console.log("open side bar")
   }
 
   const closeSideMenu = () => {
     setSideMenuOpen(false)
-    console.log("close side bar")
   }
   const addContentBadge = (id: string, valor: ReactNode) => {
     const mensajeExistente = mensajes.find((mensaje) => mensaje.id === id)
