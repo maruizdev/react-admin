@@ -1,10 +1,26 @@
-import { AppBar, Avatar, Box, Button, Divider, Grid, IconButton, Menu, MenuItem, ToggleButton, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material"
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Divider,
+  Grid,
+  IconButton,
+  Menu,
+  MenuItem,
+  ToggleButton,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+  useTheme
+} from "@mui/material"
 import { useSidebar } from "../../context/SideBarProvider"
 import { IconCustom } from "../IconCustom"
 import { useNavigate } from "react-router-dom"
 import { IconTooltip } from "../buttons/IconTooltip"
 import { useState } from "react"
 import { AlertDialog } from "../modals/AlertDialog"
+import { ThemeSwitcherButton } from "../buttons/ThemeSwitcherButton"
 
 export const NavbarUser = () => {
 
@@ -30,6 +46,9 @@ export const NavbarUser = () => {
     setAnchorEl(event.currentTarget)
   }
 
+  const openHelp = () => {
+    console.log("Open Help")
+  }
   const accionCerrarSesion = () => {
     cerrarMenu()
     setMostrarAlertaCerrarSesion(true)
@@ -131,12 +150,15 @@ export const NavbarUser = () => {
             name={'Ayuda'}
             titulo={'Ayuda'}
             accion={() => {
-              console.log("Abrir ayuda")
+              openHelp()
             }}
             color={'action'}
             icono={'help_outline'}
           >
           </IconTooltip>
+ 
+
+
 
           <ToggleButton
             sx={{ px: 1.2 }}
@@ -147,7 +169,7 @@ export const NavbarUser = () => {
             selected={!!anchorEl}
           >
             <Avatar
-              sx={{ fontSize: '0.82rem', width: 35, height: 35, bgcolor: 'secondary.main' }}
+              sx={{ fontSize: '0.82rem', width: 35, height: 35, bgcolor: 'default.main' }}
             >
               <IconCustom color="action">person_outline</IconCustom>
             </Avatar>
