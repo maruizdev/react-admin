@@ -14,11 +14,11 @@ export const guardarCookie = (
   options?: CookieOptions
 ) => {
   Cookies.set(key, value, {
-    secure: import.meta.env.PUBLIC_COOKIE_SECURE === 'true',
+    secure: true ,//import.meta.env.PUBLIC_COOKIE_SECURE === 'true',
     sameSite: 'strict',
     ...options
   })
-
+console.log("COKIEEEE")
   console.log('guardar cookiee: ', key, value)
 }
 

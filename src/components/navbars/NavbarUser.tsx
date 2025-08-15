@@ -30,7 +30,7 @@ export const NavbarUser = () => {
   const theme = useTheme()
   // const sm = useMediaQuery(theme.breakpoints.only('sm'))
 
-  const [anchorEl, setAnchorEl] = useState < null | HTMLElement > (null)
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const xs = useMediaQuery(theme.breakpoints.only('xs'))
 
   const navigate = useNavigate(); // Hook de navegación en React Router
@@ -156,8 +156,8 @@ export const NavbarUser = () => {
             icono={'help_outline'}
           >
           </IconTooltip>
- 
 
+          <ThemeSwitcherButton />
 
 
           <ToggleButton
